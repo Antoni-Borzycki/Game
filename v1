@@ -1,0 +1,79 @@
+import random
+
+
+
+bag_list = []
+print("Commands:")
+print("i=inventory")
+print("")
+print("")
+print("")
+
+
+def map():
+    print("You wake up washed up on the (s)hore")
+    while True:
+        choice = input("""
+        - Go to the (v)olcano
+        - Go to the (c)ave
+        """)
+        choice=choice.lower()
+        
+
+        if choice == "v":
+            print("You make your way up...")
+            volcano()
+            break
+        elif choice == "c":
+            print("You wander into the darkness...")
+            cave()
+            break
+        elif choice =="s":
+            shore()
+            break
+        else:
+            print("What? That's not an option")
+
+
+def cave():
+    print("You find a wing!")
+    bag_list.append("bat wing")
+    print("You cant see anything would should you do?")
+    
+def volcano():
+    print("You find a rock!")
+    bag_list.append("volcanic rock")
+    print("Its getting hot")
+
+def shore():
+    
+    print("You find a shell!")
+    bag_list.append("Shell")
+    print("You get a little hungry you should go somewhere")
+    while True:
+        choice=input("pick v or c")
+        if choice == "v":
+            volcano()
+            break
+            
+        elif choice == "c":
+            cave()
+            break
+        elif choice =="s":
+            shore2()
+            break
+            
+        elif choice == "i":
+            print(bag_list)
+        else:
+            print("What? That's not an option")
+
+def shore2():
+    print("You get a strange feeling head out")
+
+
+
+map()
+
+
+
